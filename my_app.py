@@ -10,8 +10,8 @@ def main():
     file = st.file_uploader("Upload Photo")
     if file is not None:
         st.image(file)
-        img = cv2.imread(file)
         image = Image.open(file)
+        img = cv2.imread(image)
         image = tf.image.resize(image, [224,224]) 
         image = tf.keras.preprocessing.image.img_to_array(image)
         image = image / 255.0      
