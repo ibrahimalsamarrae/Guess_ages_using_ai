@@ -8,7 +8,7 @@ def main():
     st.write("Öğrenmek için aşağıya kendi resminizi yükleyin! ")
     file = st.file_uploader("Upload Photo")
     if file is not None:
-        st.image(file)
+        st.image(file ,width=300)
         image = Image.open(file)
         image = tf.image.resize(image, [224,224]) 
         # image = tf.keras.preprocessing.image.img_to_array(image)
