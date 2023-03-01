@@ -8,16 +8,15 @@ def main():
     st.write("Öğrenmek için aşağıya kendi resminizi yükleyin! ")
     file = st.file_uploader("Upload Photo")
     if file is not None:
-        st.image(file ,width=300)
+        st.image(file )
         image = Image.open(file)
         image = tf.image.resize(image, [224,224]) 
-        # image = tf.keras.preprocessing.image.img_to_array(image)
-        # image = image / 255.0      
-        # image = tf.expand_dims(image, axis=0)
+        image = tf.keras.preprocessing.image.img_to_array(image)
+        image = image / 255.0      
+        image = tf.expand_dims(image, axis=0)
         
      
-        image = image.reshape(1, 224, 224, 3)
-        image = image/255.0
+      
         
         model = tf.keras.models.load_model("my_model.h5")
         age = model.predict(image)
