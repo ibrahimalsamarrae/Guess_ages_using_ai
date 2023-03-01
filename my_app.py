@@ -11,7 +11,6 @@ def main():
     if file is not None:
         st.image(file)
         image = Image.open(file)
-        img=image
         image = tf.image.resize(image, [224,224]) 
         image = tf.keras.preprocessing.image.img_to_array(image)
         image = image / 255.0      
@@ -21,7 +20,7 @@ def main():
       
         
         model = tf.keras.models.load_model("my_model.h5")
-        sonuc = DeepFace.analyze(img, actions = ['age'])
+        sonuc = DeepFace.analyze(file, actions = ['age'])
         age = model.predict(image)
         st.markdown("## yaşınız %i gibi görünüyor" %age[0][0])
         st.markdown("## yaşınız %i gibi görünüyor" %sonuc['age'])
