@@ -1,7 +1,7 @@
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
-import cv2
+
 
 def main():
     st.header("Görünüşüne göre yaşını bil")
@@ -10,12 +10,12 @@ def main():
     if file is not None:
         st.image(file)
         image = Image.open(file)
-        # image = tf.image.resize(image, [224,224]) 
+        image = tf.image.resize(image, [224,224]) 
         # image = tf.keras.preprocessing.image.img_to_array(image)
         # image = image / 255.0      
         # image = tf.expand_dims(image, axis=0)
         
-        image = cv2.resize(image, (224, 224))
+     
         image = image.reshape(1, 224, 224, 3)
         image = image/255.0
         
