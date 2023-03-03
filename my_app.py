@@ -32,7 +32,7 @@ def main():
             ######################################################################
             
             img = cv2.imread( file.name)
-            img = tf.image.resize(img, (224, 224))
+            img = cv2.resize(img, (224, 224))
             img = img.reshape(1, 224, 224, 3)
             img = img/255.0
             pred = model.predict(img)
