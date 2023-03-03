@@ -10,7 +10,7 @@ def main():
        file = st.file_uploader("Upload Photo")
        if file is not None:
             # st.image(file, width=300)
-            # image = Image.open(file)
+            img = Image.open(file)
             
             # image = tf.keras.preprocessing.image.img_to_array(image)
             # image = tf.image.resize(image, [224,224]) 
