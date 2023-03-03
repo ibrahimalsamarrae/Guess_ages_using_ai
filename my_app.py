@@ -1,7 +1,6 @@
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
-import cv2
 
 def main():
         
@@ -23,20 +22,6 @@ def main():
             st.markdown("## yaşınız %i gibi görünüyor" %age[0][0])
             
             
-            
-            
-            
-            
-            
-            
-            ######################################################################
-            
-            img = cv2.imread( file.name)
-            img = cv2.resize(img, (224, 224))
-            img = img.reshape(1, 224, 224, 3)
-            img = img/255.0
-            pred = model.predict(img)
-            st.markdown("## yaşınız %i gibi görünüyor" %pred[0][0])
             
 if __name__ == '__main__':
      main()
