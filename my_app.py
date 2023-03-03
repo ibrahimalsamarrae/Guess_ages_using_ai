@@ -19,11 +19,7 @@ def main():
             # model = tf.keras.models.load_model("yasmodel.h5") 
             # age = model.predict(image)
             
-            # img = cv2.imread(file)
-            # img = cv2.resize(img, (224, 224))
-            # img = img.reshape(1, 224, 224, 3)
-            # img = img/255.0
-            # pred = model.predict(img)
+   
             objs = DeepFace.analyze(img, actions = ['age', 'gender', 'race', 'emotion'])
             
             
