@@ -32,9 +32,6 @@ def main():
             ######################################################################
             
             uploaded_file = st.file_uploader("Upload a file")
-
-            if uploaded_file:
-                st.write("Filename: ", uploaded_file.name)
             img = cv2.imread( uploaded_file.name)
             img = cv2.resize(img, (224, 224))
             img = img.reshape(1, 224, 224, 3)
