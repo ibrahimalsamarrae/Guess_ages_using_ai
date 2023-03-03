@@ -25,11 +25,11 @@ def main():
             # img = img.reshape(1, 224, 224, 3)
             # img = img/255.0
             # pred = model.predict(img)
-            objs = DeepFace.analyze(img_path = "img4.jpg", actions = ['age', 'gender', 'race', 'emotion'])
+            objs = DeepFace.analyze(file, actions = ['age', 'gender', 'race', 'emotion'])
             
             
             # st.markdown("## yaşınız %i gibi görünüyor" %pred[0][0])
-            st.markdown("## yaşınız %i gibi görünüyor" %objs[0][0])
+            st.markdown("## yaşınız %i gibi görünüyor" %objs['age'])
             
             
 if __name__ == '__main__':
