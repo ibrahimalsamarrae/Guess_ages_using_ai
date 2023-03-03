@@ -1,7 +1,7 @@
 import streamlit as st
 import tensorflow as tf
-from PIL import Image
-import cv2
+# from PIL import Image
+# import cv2
 from deepface import DeepFace
 
 def main():
