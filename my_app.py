@@ -1,7 +1,7 @@
 import streamlit as st
 import tensorflow as tf
-# from PIL import Image
-# import cv2
+from PIL import Image
+import cv2
 from deepface import DeepFace
 
 def main():
@@ -11,7 +11,7 @@ def main():
        file = st.file_uploader("Upload Photo")
        if file is not None:
             # st.image(file, width=300)
-            # img = Image.open(file)
+            img = Image.open(file)
             
             # image = tf.keras.preprocessing.image.img_to_array(image)
             # image = tf.image.resize(image, [224,224]) 
@@ -25,7 +25,7 @@ def main():
             # img = img.reshape(1, 224, 224, 3)
             # img = img/255.0
             # pred = model.predict(img)
-            objs = DeepFace.analyze(file, actions = ['age', 'gender', 'race', 'emotion'])
+            objs = DeepFace.analyze(img, actions = ['age', 'gender', 'race', 'emotion'])
             
             
             # st.markdown("## yaşınız %i gibi görünüyor" %pred[0][0])
